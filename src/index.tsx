@@ -1,8 +1,5 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from "react-dom";
+import App from './App'
 
-const el = () => {
-    return <div>hello world!</div>
-}
-
-ReactDOM.render(el(), document.getElementById('root'))
+ReactDOM.render(<App></App>, document.getElementById('root'))
