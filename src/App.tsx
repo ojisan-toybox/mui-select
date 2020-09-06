@@ -91,21 +91,48 @@ export default function SimpleSelect() {
             </FormControl>
             <h1>label実験</h1>
             <FormControl className={classes.formControl}>
-                <InputLabel id="all">all</InputLabel>
+                <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+                    Age
+            </InputLabel>
                 <Select
-                    labelId="all"
-                    id="all"
+                    labelId="demo-simple-select-placeholder-label-label"
+                    id="demo-simple-select-placeholder-label"
                     value={age}
                     onChange={handleChange}
                     displayEmpty
+                    className={classes.selectEmpty}
                 >
-                    <MenuItem value="None">
+                    <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
                     <MenuItem value={10}>Ten</MenuItem>
                     <MenuItem value={20}>Twenty</MenuItem>
                     <MenuItem value={30}>Thirty</MenuItem>
                 </Select>
+                <FormHelperText>Label + placeholder</FormHelperText>
+            </FormControl>
+            <h1>form controlの状態と各パーツの状態はどっちが優先されるか</h1>
+            <FormControl className={classes.formControl} disabled={true}>
+                <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+                    Age
+            </InputLabel>
+                <Select
+                    disabled={false}
+                    labelId="demo-simple-select-placeholder-label-label"
+                    id="demo-simple-select-placeholder-label"
+                    value={age}
+                    onChange={handleChange}
+                    displayEmpty
+                    className={classes.selectEmpty}
+                >
+                    <MenuItem value="">
+                        <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+                <FormHelperText>Label + placeholder</FormHelperText>
             </FormControl>
         </div>
     );
